@@ -63,4 +63,22 @@ public class UserServiceImpl implements UserService {
 
         return CommonResult.success(userResult, "登录成功");
     }
+
+    @Override
+    public CommonResult register(User user) {
+        int checkUsernameCount = userDao.checkUserName(user.getUsername());
+        if(checkUsernameCount != 0){
+            return CommonResult.failed("用户名已存在");
+        }
+
+        int registResult = userDao.insertUser(user);
+        if(registResult == 1){
+            return CommonResult.success(registResult,"注册成功");
+        }else{
+            return CommonResult.failed("注册失败");
+        }
+
+    }
+
+
 }

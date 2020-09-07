@@ -108,13 +108,20 @@ public class UserController {
 
     }
 
-    //登录跳转
-    @RequestMapping(value = "/login", method = {RequestMethod.POST})
+
+    @ApiOperation("用户登录")
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public CommonResult login(@RequestBody User user, HttpSession session) throws Exception {
         CommonResult<User> commonResult = userService.login(user);
         if("200".equals(commonResult.getCode())){
             session.setAttribute("currentUser", commonResult.getData());
         }
         return commonResult;
+    }
+
+    @ApiOperation("用户注册")
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public CommonResult register(@RequestBody User user) {
+       return userService.register(user);
     }
 }

@@ -109,7 +109,7 @@
         if(data!=null){
           var message =  JSON.parse(data);
           if("200" == message.code){
-            window.location.href="pages/../pages/index.html";
+            window.location.href="pages/index.html";
           }else if("500" == message.code){
             alert(message.message)
           }

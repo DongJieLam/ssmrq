@@ -21,4 +21,6 @@ public interface UserService {
      List<User> queryUserByPage(int page, int pageSize);
 
      CommonResult<User> login(User user);
+
+     CommonResult register(User user);
 }
