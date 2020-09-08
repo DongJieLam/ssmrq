@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
-@Api(description = "用户管理")
+@Api(value = "用户管理", tags={"用户管理接口"})
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
