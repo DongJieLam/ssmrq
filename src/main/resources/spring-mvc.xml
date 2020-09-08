@@ -42,9 +42,9 @@
     <context:annotation-config/>
     <!-- 将SwaggerConfig配置类注入 -->
     <bean class="com.rain.configer.SwaggerConfiger"/>
-    <!-- 配置swagger资源不被拦截 -->
-    <mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/>
-    <mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>
+    <!-- 配置swagger资源不被拦截   上面配置了静态资源处理器   <mvc:default-servlet-handler /> 这里就不用配置了-->
+<!--    <mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/>-->
+<!--    <mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>-->
 
 
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
