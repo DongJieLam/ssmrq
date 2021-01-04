@@ -69,5 +69,9 @@
             <tx:method name="*" />
             <tx:method name="get*" read-only="true" />
         </tx:attributes>
+    <bean id="applicationThreadPool" class="com.irdstudio.sdk.beans.core.threadpool.ApplicationThreadPool2">
+        <constructor-arg name="maxThread" value="${applicationThreadPool.maxTaskNum}"></constructor-arg>
+    </bean>
     </tx:advice> -->
+
 </beans>
