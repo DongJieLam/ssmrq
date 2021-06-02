@@ -1,6 +1,8 @@
 package com.rain.util;
 
 import com.rain.annotation.MyAnnotation;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.lang.reflect.Method;
 
@@ -31,6 +33,7 @@ public class TestAnnotation {
                 System.out.println(annotation.value());
             }
 
+            ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -8,6 +8,11 @@ public class User {
     private String mobile;
     private String password;
 
+    public  User(int id, String username,String role){
+        this.id = id;
+        this.username = username;
+        this.role = role;
+    }
     public int getId() {
         return id;
     }
